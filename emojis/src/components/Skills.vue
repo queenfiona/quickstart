@@ -6,11 +6,11 @@
           {{index}}.{{data.skill}}
         </li>
       </ul>
-      <p v-if="skills.length>=1">You have more than 1 skill</p>
-      <p v-else>You have one skill</p>
+      <div v-bind:class="{alert: showAlert}">
+        
+      </div>      
       
-    </div>
-   
+    </div>   
   </div>
 </template>
 
@@ -22,27 +22,23 @@ export default {
       skills: [
         {"skill" : "Vue.js"},
         {"skill" : "Frontend Developer"}
-      ]
-
+      ],
+      showAlert : true
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
+<style  scoped>
+ul{
   list-style-type: none;
-  padding: 0;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.alert{
+  background-color: "yellow";
+  width: 100%;
+  height: 30px;
 }
-a {
-  color: #42b983;
-}
+
 </style>
