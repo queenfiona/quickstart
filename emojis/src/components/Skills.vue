@@ -6,7 +6,12 @@
           {{data.skill}}
         </li>
       </ul>
+<<<<<<< HEAD
       <div v-bind:class="alertObject">  
+=======
+      <div v-bind:class="{alert: showAlert}">
+        
+>>>>>>> 6c5ccc0daf47a8622b83fb981f8cb6436404adb8
       </div>      
       
     </div>   
@@ -22,9 +27,13 @@ export default {
         {"skill" : "Vue.js"},
         {"skill" : "Frontend Developer"}
       ],
+<<<<<<< HEAD
       alertObject : {
         alert : true
       }
+=======
+      showAlert : true
+>>>>>>> 6c5ccc0daf47a8622b83fb981f8cb6436404adb8
     }
   }
 }
@@ -32,6 +41,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  scoped>
+<<<<<<< HEAD
 .holder {
   background: #fff;
 }
@@ -58,5 +68,16 @@ p{
 }
 .container{
   box-shadow: 0px 0px 40px lightgray;
+=======
+ul{
+  list-style-type: none;
 }
+
+.alert{
+  background-color: "yellow";
+  width: 100%;
+  height: 30px;
+>>>>>>> 6c5ccc0daf47a8622b83fb981f8cb6436404adb8
+}
+
 </style>
