@@ -3,7 +3,9 @@
     <div class="holder">
       <form @submit.prevent="addSkill">
         <input type="text" placeholder=" Enter a skill that you have.." v-model="skill" name="skill" v-validate="'min:5'">    
-        <p class="alert" v-if="errors.has('skill')">{{errors.first('skill')}}</p>          
+        <transition name="alert-in"> 
+          <p class="alert" v-if="errors.has('skill')">{{errors.first('skill')}}</p>  
+        </transition>                
       </form>     
       
       <ul>
@@ -94,4 +96,25 @@ input {
   padding: 5px;
   margin-top:  -20px;
 }
+.alert-in-enter-active {
+  animation: bounce-in .5s;
+}
+
+.alert-in-leave-active {
+  animation: bounce-in .5s reverse;
+}
+
+@keyframes bounce-in{
+  0%{
+    transform: scale(0);
+  }
+  50%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+
 </style>
